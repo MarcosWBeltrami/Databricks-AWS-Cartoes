@@ -1,0 +1,31 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "AllowS3Operations",
+			"Effect": "Allow",
+			"Action": [
+				"s3:ListBucket",
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:DeleteObject",
+				"secretsmanager:*"
+			],
+			"Resource": [
+				"arn:aws:s3:::s3://projeto-mw",
+				"arn:aws:s3:::s3://projeto-mw/*",
+				"arn:aws:secretsmanager:us-east-2:767397991838:secret:ailos_segredo-dUosMk"
+			]
+		},
+		{
+			"Sid": "Statement1",
+			"Effect": "Allow",
+			"Action": [
+				"rds:*"
+			],
+			"Resource": [
+				"arn:aws:rds:us-east-2:767397991838:db:ailos"
+			]
+		}
+	]
+}
